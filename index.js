@@ -1,30 +1,21 @@
-// ===============================
-// API URLs
-// ===============================
+// API URLs----------------------->
 
 const ALL_ISSUES_API = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
 const SINGLE_ISSUE_API = "https://phi-lab-server.vercel.app/api/v1/lab/issue/";
 const SEARCH_API = "https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=";
 
 
-// ===============================
-// DOM Elements
-// ===============================
-
+// DOM Elements-------------------->
 // cards container (grid)
 const container = document.querySelector(".grid");
 
 // search input
 const searchInput = document.querySelector("input");
-
 // tab buttons
 const tabs = document.querySelectorAll(".flex.gap-3.mb-6 button");
 
 
-// ===============================
-// Loading Spinner
-// ===============================
-
+// Loading Spinner------------------>
 function showLoading() {
   container.innerHTML = `
   <div class="col-span-4 text-center py-10">
@@ -34,10 +25,7 @@ function showLoading() {
 }
 
 
-// ===============================
-// Fetch All Issues
-// ===============================
-
+// Fetch All Issues------------------>
 async function loadIssues() {
 
   showLoading();
@@ -45,19 +33,15 @@ async function loadIssues() {
   try {
     const res = await fetch(ALL_ISSUES_API);
     const data = await res.json();
-
     renderIssues(data.data);
-
-  } catch (error) {
+  } 
+  catch (error) {
     console.log("Error loading issues", error);
   }
 }
 
 
-// ===============================
-// Render Issues (Create Cards)
-// ===============================
-
+// Render Issues (Create Cards)--------->
 function renderIssues(issues) {
 
   container.innerHTML = "";
@@ -116,20 +100,14 @@ function renderIssues(issues) {
 }
 
 
-// ===============================
-// Update Issue Count
-// ===============================
-
+// Update Issue Count--------->
 function updateIssueCount(count) {
   const title = document.querySelector("h2");
   title.textContent = `${count} Issues`;
 }
 
 
-// ===============================
-// Tab Filter
-// ===============================
-
+// Tab Filter------------------>
 tabs.forEach(tab => {
 
   tab.addEventListener("click", async () => {
@@ -161,10 +139,7 @@ tabs.forEach(tab => {
 });
 
 
-// ===============================
-// Search Functionality
-// ===============================
-
+// Search Functionality-------->
 searchInput.addEventListener("keyup", async (e) => {
 
   const text = e.target.value;
@@ -180,11 +155,7 @@ searchInput.addEventListener("keyup", async (e) => {
 });
 
 
-
-// ===============================
-// Issue Modal
-// ===============================
-
+// Issue Modal----------------->
 async function openIssue(id) {
 
   // single issue fetch
