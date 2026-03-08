@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title & logo -->
+    <title>GitHub Issue Tracker Apps</title>
+    <link rel="stylesheet" href="assets/github-logo.png">
+    
+    <!-- font-awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/
+               ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+               integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/
+               kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==
+              " crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- font intigration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- tailwind & daisy-Ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm px-8 py-4 flex justify-between items-center">
+
+    <div class="flex items-center gap-2">
+    <!-- GitHub Logo Added Here -->
+    <img src="assets/github-logo.png" alt="GitHub Logo" class="w-8 h-8">
+
+    <h1 class="text-xl font-bold">GitHub Issues Tracker</h1>
+    </div>
+
+    <div class="flex items-center gap-3">
+    <input type="text"placeholder="Search issues..." class="border rounded-lg px-4 py-2 w-60 focus:outline-none"/>
+    <button class="bg-purple-600 text-white px-4 py-2 rounded-lg">+ New Issue</button>
+    </div>
+
+    </nav>
+
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto p-6">
+
+    <!-- Tabs -->
+    <div class="flex gap-3 mb-6">
+    <button class="bg-purple-600 text-white px-5 py-2 rounded-md">
+        All
+    </button>
+
+    <button class="bg-gray-200 px-5 py-2 rounded-md">
+        Open
+    </button>
+
+    <button class="bg-gray-200 px-5 py-2 rounded-md">
+        Closed
+    </button>
+
+    </div>
+
+
+    <!-- Issue Info -->
+    <div class="bg-white rounded-xl p-6 flex justify-between items-center mb-8 shadow-sm">
+      
+       
+       <div>     
+       <h2 class="text-lg font-semibold">50 Issues</h2>
+       <p class="text-gray-500 text-sm">
+       Track and manage your project issues
+       </p>
+       </div>
+
+        <div class="flex gap-4 text-sm">
+
+        <div class="flex items-center gap-2">
+        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            Open
+        </div>
+
+        <div class="flex items-center gap-2">
+        <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+            Closed
+        </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Issue Cards -->
+    <div id="issues-container" class="grid lg:grid-cols-4 md:grid-cols-2 gap-6">
+    </div>
+
+    </div>
+     
+    <script src="index.js"></script>
+</body> 
+</html>
